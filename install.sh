@@ -55,10 +55,10 @@ rm -f ~/.local/share/nautilus-python/extensions/code-nautilus.py
 echo $DOWNLOAD_NEW
 wget --show-progress -q -O ~/.local/share/nautilus-python/extensions/code-nautilus.py https://raw.githubusercontent.com/BoringCat/code-nautilus_cn/master/code-nautilus.py
 
-echo -e ${RESTART_REQUIRE}" (Y/n)\c"
-confirm=$(read)
+echo -e ${RESTART_REQUIRE}" (Y/n): \c"
+read confirm
 
-if [[ '$confirm' == 'y' || '$confirm' == 'Y' ]]; then
+if [[ "$confirm" == 'y' || "$confirm" == 'Y' ]]; then
 # Restart nautilus
     echo $RESTART
     nautilus -q
